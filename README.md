@@ -3,6 +3,7 @@
 Shortcuts for the [maxiconda](https://github.com/Semi-ATE/maxiconda) Windows installer.
 
 [![GitHub](https://img.shields.io/github/license/Semi-ATE/maxiconda-shortcuts?color=black)](https://github.com/Semi-ATE/maxiconda-shortcuts/blob/main/LICENSE)
+[![Conda](https://img.shields.io/conda/pn/Semi-ATE/maxiconda-shortcuts?color=black)](https://anaconda.org/Semi-ATE/maxiconda-shortcuts)
 
 [![CI](https://github.com/Semi-ATE/maxiconda-shortcuts/workflows/CI/badge.svg?branch=main)](https://github.com/Semi-ATE/maxiconda-shortcuts/actions?query=workflow%3ACI)
 [![CD](https://github.com/Semi-ATE/maxiconda-shortcuts/workflows/CD/badge.svg)](https://github.com/Semi-ATE/maxiconda-shortcuts/actions?query=workflow%3ACD)
