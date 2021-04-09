@@ -1,0 +1,38 @@
+name: CD
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  make-release:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v2
+
+    - name: tag to version
+      shell: bash -le {0}
+      run: |
+        cd recipe
+        echo "{% set version = "${GITHUB_REF#refs/*/}" %}" > meta.yaml.versioned
+        tail -n +2 meta.yaml >> meta.yaml.versioned
+        cat meta.yaml.versioned
+#        cd ..
+#        mv -f meta.yaml.versioned meta.yaml
+
+#    - name: Publish Conda
+#      uses: fcakyon/conda-publish-action@v1.3
+#      with:
+#        subdir: 'recipe'
+#        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
+#        platforms: 'win'
+
+#    - name: Upload release assets
+#      uses: alexellis/upload-assets@0.2.3
+#      env:
+#        GITHUB_TOKEN: ${{ github.token }}
+#      with:
+#        asset_paths: '["dist/Semi-ATE-*.tar.gz"]'      
+      
+

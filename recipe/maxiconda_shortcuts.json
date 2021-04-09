@@ -1,0 +1,19 @@
+{
+    "menu_name": "maxiconda",
+    "menu_items":
+    [
+        {
+            "name": "terminal",
+            "system": "%windir%\\system32\\cmd.exe",
+            "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
+            "icon": "${MENU_DIR}/terminal.ico"
+        }
+        {
+            "name": "spyder",
+            "system": "%windir%\\system32\\cmd.exe",
+            "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "run", "-n", "_spyder_", "spyder"],
+            "icon": "${MENU_DIR}/spyder.ico"
+        }
+
+    ]
+}
