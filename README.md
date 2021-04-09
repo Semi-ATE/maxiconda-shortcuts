@@ -15,4 +15,4 @@ Shortcuts for the [maxiconda](https://github.com/Semi-ATE/maxiconda) Windows ins
 
 This will install the following in the windows menu:
 - Terminal (that activates the `maxiconda` environment).
-- Spyder (from the spyder application environment).
+- Spyder (from the `_spyder_` application environment).
