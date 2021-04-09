@@ -12,6 +12,7 @@ Shortcuts for the [maxiconda](https://github.com/Semi-ATE/maxiconda) Windows ins
 
 [![GitHub issues](https://img.shields.io/github/issues/Semi-ATE/maxiconda-shortcuts)](https://github.com/Semi-ATE/maxiconda-shortcuts/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Semi-ATE/maxiconda-shortcuts)](https://github.com/Semi-ATE/maxiconda-shortcuts/pulls)
+![Conda downloads](https://img.shields.io/conda/dn/Semi-ATE/maxiconda-shortcuts?color=brightgreen)
 
 This will install the following in the windows menu:
 - Terminal (that activates the `maxiconda` environment).
