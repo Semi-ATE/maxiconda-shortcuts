@@ -1,6 +1,6 @@
 # maxiconda-shortcuts
 
-Shortcuts for the maxiconda installer under windows
+Shortcuts for the [maxiconda](https://github.com/Semi-ATE/maxiconda) Windows installer.
 
 [![GitHub](https://img.shields.io/github/license/Semi-ATE/maxiconda-shortcuts?color=black)](https://github.com/Semi-ATE/maxiconda-shortcuts/blob/main/LICENSE)
 
