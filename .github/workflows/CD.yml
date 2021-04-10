@@ -18,21 +18,12 @@ jobs:
         echo "{% set version = "${GITHUB_REF#refs/*/}" %}" > meta.yaml.versioned
         tail -n +2 meta.yaml >> meta.yaml.versioned
         cat meta.yaml.versioned
-#        cd ..
-#        mv -f meta.yaml.versioned meta.yaml
+        mv -f meta.yaml.versioned meta.yaml
+        cd ..
 
-#    - name: Publish Conda
-#      uses: fcakyon/conda-publish-action@v1.3
-#      with:
-#        subdir: 'recipe'
-#        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-#        platforms: 'win'
-
-#    - name: Upload release assets
-#      uses: alexellis/upload-assets@0.2.3
-#      env:
-#        GITHUB_TOKEN: ${{ github.token }}
-#      with:
-#        asset_paths: '["dist/Semi-ATE-*.tar.gz"]'      
-      
-
+    - name: Publish Conda
+      uses: fcakyon/conda-publish-action@v1.3
+      with:
+        subdir: 'recipe'
+        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
+        platforms: 'win'
