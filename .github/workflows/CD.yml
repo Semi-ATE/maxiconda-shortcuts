@@ -21,6 +21,7 @@ jobs:
         mv -f meta.yaml.versioned meta.yaml
         cd ..
 
+# the following step only works on Linux ...
     - name: Publish Conda
       uses: fcakyon/conda-publish-action@v1.3
       with:
