@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  make-release:
+  build:
     runs-on: windows-latest
     steps:
     - name: Checkout 
@@ -21,10 +21,33 @@ jobs:
         mv -f meta.yaml.versioned meta.yaml
         cd ..
 
-# the following step only works on Linux ...
-    - name: Publish Conda
-      uses: fcakyon/conda-publish-action@v1.3
+    - name: Setup miniconda
+      uses: conda-incubator/setup-miniconda@v2
       with:
-        subdir: 'recipe'
-        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-        platforms: 'win'
+        miniconda-version: "latest" 
+        python-version: '3.8'
+        channel-priority: "strict"
+        channels: "conda-forge"  
+        mamba-version: "*"
+        show-channel-urls: true 
+
+    - name: show environments
+      run: conda env list
+
+    - name: Install conda-build & conda-verify
+      run: mamba install -n test conda-build conda-verify -y
+
+    - name: Create Conda Package
+      run: |
+        conda env list
+        conda build ./recipe
+
+#  release:
+#    runs-on: linux-latest
+#    steps:
+#    - name: Publish Conda
+#      uses: fcakyon/conda-publish-action@v1.3
+#      with:
+#        subdir: 'recipe'
+#        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
+#        platforms: 'win'
