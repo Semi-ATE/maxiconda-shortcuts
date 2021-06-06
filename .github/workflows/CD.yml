@@ -6,7 +6,7 @@ on:
 
 jobs:
   make-release:
-    runs-on: windows-latest
+    runs-on: linux-latest
     steps:
     - name: Checkout 
       uses: actions/checkout@v2
