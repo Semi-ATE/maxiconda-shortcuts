@@ -42,9 +42,7 @@ jobs:
         conda env list
         conda build ./recipe
 
-#  release:
-#    runs-on: linux-latest
-#    steps:
+# the step below apparently only runs on linux ... how do I publish from windows ?!?
 #    - name: Publish Conda
 #      uses: fcakyon/conda-publish-action@v1.3
 #      with:
