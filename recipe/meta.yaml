@@ -1,4 +1,4 @@
-{% set version = "0.0.0" %}
+{% set version = os.environ.get("MAXICONDA_SHORTCUTS_VERSION", "") %}
 
 package:
   name: maxiconda-shortcuts
