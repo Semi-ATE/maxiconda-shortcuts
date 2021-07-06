@@ -19,37 +19,23 @@ jobs:
     - name: Setup miniconda
       uses: conda-incubator/setup-miniconda@v2
       with:
-        miniconda-version: "latest" 
-        python-version: '3.8'
-        channel-priority: "strict"
-        channels: "conda-forge"  
-        mamba-version: "*"
-        show-channel-urls: true 
+        miniconda-version: latest
+        activate-environment: maxiconda-shortcuts
+        environment-file: environment.yml
+        channel-priority: strict
 
     - name: show environments
-      run: conda env list
-
-    - name: Install conda-build & conda-verify
-      run: mamba install -n test conda-build conda-verify -y
-
-    - name: Create Conda Package
+      shell: bash -l {0}
       run: |
         conda env list
-        conda build ./recipe
+        conda list
 
-#    - name: Upload Conda Package
-#      run: blablabla
-             
-#    - name: Upload release assets
-#      uses: alexellis/upload-assets@0.2.3
-#      env:
-#        GITHUB_TOKEN: ${{ github.token }}
-#      with:
-#        asset_paths: '["dist/Semi-ATE-*.tar.gz"]'      
-
-#    - name: Publish Conda
-#      uses: fcakyon/conda-publish-action@v1.3
-#      with:
-#        subdir: 'recipe'
-#        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-#        platforms: 'win'
+    - name: Create Conda Package and upload
+      env:
+        CONDA_UPLOAD_TOKEN: ${{ secrets.CONDA_UPLOAD_TOKEN }}
+        MAXICONDA_SHORTCUTS_VERSION: "0.0.1"
+        OUTPUT_FOLDER: D:\a\maxiconda-shortcuts\maxiconda-shortcuts
+      shell: bash -l {0}
+      run: |
+        conda build recipe --output-folder $OUTPUT_FOLDER
+        anaconda upload -t $CONDA_UPLOAD_TOKEN -u semi-ate $OUTPUT_FOLDER\win-64\maxiconda-shortcuts-$MAXICONDA_SHORTCUTS_VERSION-0.tar.bz2 --force
