@@ -1,51 +1,17 @@
 name: CD
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - "*"
+
+  pull_request:
+    branches:
+      - "*"
 
 jobs:
-  build:
+  build-package:
     runs-on: windows-latest
     steps:
     - name: Checkout 
       uses: actions/checkout@v2
-
-    - name: tag to version
-      shell: bash -le {0}
-      run: |
-        cd recipe
-        echo "{% set version = "${GITHUB_REF#refs/*/}" %}" > meta.yaml.versioned
-        tail -n +2 meta.yaml >> meta.yaml.versioned
-        cat meta.yaml.versioned
-        mv -f meta.yaml.versioned meta.yaml
-        cd ..
-
-    - name: Setup miniconda
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        miniconda-version: "latest" 
-        python-version: '3.8'
-        channel-priority: "strict"
-        channels: "conda-forge"  
-        mamba-version: "*"
-        show-channel-urls: true 
-
-    - name: show environments
-      run: conda env list
-
-    - name: Install conda-build & conda-verify
-      run: mamba install -n test conda-build conda-verify -y
-
-    - name: Create Conda Package
-      run: |
-        conda env list
-        conda build ./recipe
-
-# the step below apparently only runs on linux ... how do I publish from windows ?!?
-#    - name: Publish Conda
-#      uses: fcakyon/conda-publish-action@v1.3
-#      with:
-#        subdir: 'recipe'
-#        anacondatoken: ${{ secrets.ANACONDA_TOKEN }}
-#        platforms: 'win'

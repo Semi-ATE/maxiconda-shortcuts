@@ -1,0 +1,10 @@
+name: maxiconda-shortcuts
+
+channels:
+  - conda-forge
+
+dependencies:
+  - anaconda-client
+  - conda-build
+  - conda-verify
+  - python
