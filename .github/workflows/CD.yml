@@ -25,7 +25,7 @@ jobs:
         conda env list
         conda list
 
-    - name: Create Conda Package and upload
+    - name: Create Conda Package and upload to anaconda.org/Semi-ATE
       env:
         CONDA_UPLOAD_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
         OUTPUT_FOLDER: D:/a/maxiconda-shortcuts/maxiconda-shortcuts
