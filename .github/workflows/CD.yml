@@ -5,7 +5,7 @@ on:
     types: [created]
 
 jobs:
-  build-package:
+  Continuous_Delivery:
     runs-on: windows-latest
     steps:
     - name: Checkout 
