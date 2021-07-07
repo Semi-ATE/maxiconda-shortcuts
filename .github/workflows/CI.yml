@@ -31,6 +31,11 @@ jobs:
         OUTPUT_FOLDER: D:/a/maxiconda-shortcuts/maxiconda-shortcuts
       shell: bash -l {0}
       run: |
-        export MAXICONDA_SHORTCUTS_VERSION=${GITHUB_REF##*/}
+        export MAXICONDA_SHORTCUTS_VERSION=0.0.0
         conda build recipe --output-folder $OUTPUT_FOLDER
-        
+        ls -la $OUTPUT_FOLDER
+#    - name: Upload Package to Github artifact
+#      uses: actions/upload-artifact@v2
+#      with:
+#        path: D:/a/maxiconda-shortcuts/maxiconda-shortcuts/*
+#        name: maxiconda-shortcuts
