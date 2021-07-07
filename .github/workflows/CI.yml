@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  build-package:
+  Continuous_Integration:
     runs-on: windows-latest
     steps:
     - name: Checkout 
