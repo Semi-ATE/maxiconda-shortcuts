@@ -33,7 +33,8 @@ jobs:
       run: |
         export MAXICONDA_SHORTCUTS_VERSION=0.0.0
         conda build recipe --output-folder $OUTPUT_FOLDER
-        ls -la $OUTPUT_FOLDER
+        ls -laR $OUTPUT_FOLDER/
+        
 #    - name: Upload Package to Github artifact
 #      uses: actions/upload-artifact@v2
 #      with:
