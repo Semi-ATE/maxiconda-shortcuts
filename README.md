@@ -10,6 +10,7 @@ Shortcuts for the [maxiconda](https://github.com/Semi-ATE/maxiconda) Windows ins
 
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Semi-ATE/maxiconda-shortcuts?color=blue&label=GitHub&sort=semver)](https://github.com/Semi-ATE/maxiconda-shortcuts/releases/latest)
 [![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Semi-ATE/maxiconda-shortcuts/latest)](https://github.com/Semi-ATE/maxiconda-shortcuts)
+[![Semi-ATE Channel version]](https://img.shields.io/conda/v/Semi-ATE/maxiconda-shortcuts?color=blue)
 
 [![GitHub issues](https://img.shields.io/github/issues/Semi-ATE/maxiconda-shortcuts)](https://github.com/Semi-ATE/maxiconda-shortcuts/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Semi-ATE/maxiconda-shortcuts)](https://github.com/Semi-ATE/maxiconda-shortcuts/pulls)
