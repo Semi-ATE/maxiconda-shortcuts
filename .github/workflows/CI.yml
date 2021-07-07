@@ -33,9 +33,9 @@ jobs:
     - name: Create Conda Package and upload
       env:
         CONDA_UPLOAD_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
-        MAXICONDA_SHORTCUTS_VERSION: "0.0.1"
         OUTPUT_FOLDER: D:/a/maxiconda-shortcuts/maxiconda-shortcuts
       shell: bash -l {0}
       run: |
+        export MAXICONDA_SHORTCUTS_VERSION=${GITHUB_REF##*/}
         conda build recipe --output-folder $OUTPUT_FOLDER
         anaconda -t $CONDA_UPLOAD_TOKEN upload -u semi-ate $OUTPUT_FOLDER/win-64/maxiconda-shortcuts-$MAXICONDA_SHORTCUTS_VERSION-0.tar.bz2 --force
