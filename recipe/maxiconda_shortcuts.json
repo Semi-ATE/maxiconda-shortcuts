@@ -11,7 +11,7 @@
         {
             "name": "maxiconda PowerShell terminal",
             "system": "%windir%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-            "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
+            "scriptarguments": ["ExecutionPolicy ByPass -NoExit", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
             "icon": "${MENU_DIR}/powershell.ico"
         },
         {
