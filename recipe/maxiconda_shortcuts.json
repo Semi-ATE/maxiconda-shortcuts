@@ -9,13 +9,13 @@
             "icon": "${MENU_DIR}/cmd.ico"
         },
         {
-            "name": "maxiconda powershell terminal",
+            "name": "maxiconda PowerShell terminal",
             "system": "%windir%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
             "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
             "icon": "${MENU_DIR}/powershell.ico"
         },
         {
-            "name": "spyder",
+            "name": "Spyder",
             "system": "%windir%\\system32\\cmd.exe",
             "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "run", "-n", "_spyder_", "spyder"],
             "icon": "${MENU_DIR}/spyder.ico"
