@@ -10,7 +10,7 @@
         },
         {
             "name": "maxiconda powershell terminal",
-            "system": "%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe",
+            "system": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
             "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
             "icon": "${MENU_DIR}/powershell.ico"
         },
