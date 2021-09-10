@@ -3,10 +3,16 @@
     "menu_items":
     [
         {
-            "name": "terminal",
+            "name": "maxiconda cmd terminal",
             "system": "%windir%\\system32\\cmd.exe",
             "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
-            "icon": "${MENU_DIR}/terminal.ico"
+            "icon": "${MENU_DIR}/cmd.ico"
+        },
+        {
+            "name": "maxiconda powershell terminal",
+            "system": "%windir%\\system32\\powershell.exe",
+            "scriptarguments": ["/K", "${ROOT_PREFIX}\\condabin\\conda", "activate", "maxiconda"],
+            "icon": "${MENU_DIR}/powershell.ico"
         },
         {
             "name": "spyder",
